@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.cryptocalculator"
+    namespace = "com.rbstudio.cryptocalculator"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.cryptocalculator"
+        applicationId = "com.rbstudio.cryptocalculator"
         minSdk = 24
         targetSdk = 35
         versionCode = 1
