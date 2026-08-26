@@ -1,0 +1,28 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <group
+        android:scaleX="0.55"
+        android:scaleY="0.55"
+        android:translateX="24.3"
+        android:translateY="24.3">
+        <!-- Upward Trading Candle / Chart Trend Icon -->
+        <path
+            android:fillColor="#00E676"
+            android:pathData="M16,6l2.29,2.29-4.88,4.88-4-4L2,16.59 3.41,18l6-6 4,4 6.3-6.29L22,12V6h-6z"/>
+        <path
+            android:fillColor="#00E676"
+            android:pathData="M35,20 L45,20 L45,80 L35,80 Z"/>
+        <path
+            android:fillColor="#00E676"
+            android:pathData="M38,10 L42,10 L42,90 L38,90 Z"/>
+        <path
+            android:fillColor="#FF5252"
+            android:pathData="M60,35 L70,35 L70,65 L60,65 Z"/>
+        <path
+            android:fillColor="#FF5252"
+            android:pathData="M63,25 L67,25 L67,75 L63,75 Z"/>
+    </group>
+</vector>
