@@ -1,9 +1,12 @@
-name: Build APK
+name: Build and Release APK
 
 on:
   push:
     branches: [ main, master ]
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -27,8 +30,24 @@ jobs:
       - name: Build Debug APK
         run: gradle assembleDebug --stacktrace
 
-      - name: Upload APK Artifact
+      - name: Rename APK for Release
+        run: |
+          mv app/build/outputs/apk/debug/app-debug.apk app/build/outputs/apk/debug/CryptoCalculator.apk
+
+      - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: crypto-calculator-debug-apk
-          path: app/build/outputs/apk/debug/*.apk
+          name: crypto-calculator-apk
+          path: app/build/outputs/apk/debug/CryptoCalculator.apk
+
+      - name: Create Public GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v1.0.${{ github.run_number }}
+          name: "Crypto Calculator v1.0.${{ github.run_number }}"
+          body: "Direct public download for the Crypto Calculator APK."
+          draft: false
+          prerelease: false
+          files: app/build/outputs/apk/debug/CryptoCalculator.apk
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
