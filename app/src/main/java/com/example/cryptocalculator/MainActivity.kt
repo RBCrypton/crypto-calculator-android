@@ -1,4 +1,4 @@
-package com.example.cryptocalculator
+package com.rbstudio.cryptocalculator
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
